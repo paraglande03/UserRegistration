@@ -10,6 +10,7 @@ public class UserValidator {
         System.out.println("1.FirstName");
         System.out.println("2.Last Name");
         System.out.println("3.E-Mail");
+        System.out.println("4.Enter number");
         System.out.println("Enter option to check");
         int inputOption = scan.nextInt();
 
@@ -27,6 +28,10 @@ public class UserValidator {
                 System.out.println("Enter your mail");
                 String email=scan.next();
                 emailvalidation(email);
+            case 4:
+                System.out.println("Enter your number");
+                String number=scan.next();
+                mobilevalidation(number);
             default:
                 System.out.println("Enter a valid Option");
         }
@@ -41,7 +46,11 @@ public class UserValidator {
     }
     public static void emailvalidation(String email){
         boolean valid = email.matches("^[A-Za-z0-9+_.-]+@(.+)$");
-        System.out.println("Name: " + email + "\nValid: " + valid);
+        System.out.println("Mail: " + email + "\nValid: " + valid);
+    }
+    public static void mobilevalidation(String number){
+        boolean valid = number.matches("^[1-9][0-9]+[ ]{0,1}+[1-9][0-9]{9}$");
+        System.out.println("Number: " + number + "\nValid: " + valid);
     }
 
 }
